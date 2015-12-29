@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCommerce.Migration.WishLists", "ActiveCommerce.Migration.WishLists\ActiveCommerce.Migration.WishLists.csproj", "{9D12C2B3-D9B4-45FA-8997-281A481DACE3}"
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "ActiveCommerce.Migration.WishLists.Sitecore", "ActiveCommerce.Migration.WishLists.Sitecore\ActiveCommerce.Migration.WishLists.Sitecore.scproj", "{2F3B2372-9A63-4950-A515-CC47189A963A}"
@@ -9,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".tds", ".tds", "{D8273A97-3
 	ProjectSection(SolutionItems) = preProject
 		TdsGlobal.config = TdsGlobal.config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCommerce.Migration.Orders", "ActiveCommerce.Migration.Orders\ActiveCommerce.Migration.Orders.csproj", "{69DDE81F-42F8-4104-8D5D-92577A781A54}"
+EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "ActiveCommerce.Migration.Orders.Sitecore", "ActiveCommerce.Migration.Orders.Sitecore\ActiveCommerce.Migration.Orders.Sitecore.scproj", "{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +32,16 @@ Global
 		{2F3B2372-9A63-4950-A515-CC47189A963A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F3B2372-9A63-4950-A515-CC47189A963A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F3B2372-9A63-4950-A515-CC47189A963A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{69DDE81F-42F8-4104-8D5D-92577A781A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69DDE81F-42F8-4104-8D5D-92577A781A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69DDE81F-42F8-4104-8D5D-92577A781A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69DDE81F-42F8-4104-8D5D-92577A781A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
