@@ -24,7 +24,7 @@ namespace ActiveCommerce.Migration.WishLists
         {
             var legacyLists = GetLegacyWishLists();
             var sessionBuilder = Sitecore.Ecommerce.Context.Entity.Resolve<ISessionBuilder>();
-            var session = sessionBuilder.GetSession();
+            var session = sessionBuilder.OpenWriteSession();
             using (var transaction = session.BeginTransaction())
             {
                 try
