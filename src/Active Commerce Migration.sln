@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCommerce.Migration.WishLists", "ActiveCommerce.Migration.WishLists\ActiveCommerce.Migration.WishLists.csproj", "{9D12C2B3-D9B4-45FA-8997-281A481DACE3}"
 EndProject
@@ -15,6 +15,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCommerce.Migration.Orders", "ActiveCommerce.Migration.Orders\ActiveCommerce.Migration.Orders.csproj", "{69DDE81F-42F8-4104-8D5D-92577A781A54}"
 EndProject
 Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "ActiveCommerce.Migration.Orders.Sitecore", "ActiveCommerce.Migration.Orders.Sitecore\ActiveCommerce.Migration.Orders.Sitecore.scproj", "{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCommerce.Migration.CustomerAddresses", "ActiveCommerce.Migration.CustomerAddresses\ActiveCommerce.Migration.CustomerAddresses.csproj", "{CE2E7268-263B-4DB2-B3A9-334FCEC26D92}"
+EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "ActiveCommerce.Migration.CustomerAddresses.Sitecore", "ActiveCommerce.Migration.CustomerAddresses.Sitecore\ActiveCommerce.Migration.CustomerAddresses.Sitecore.scproj", "{4F181F6E-9C11-4142-8A21-2FBF2DF53464}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +46,16 @@ Global
 		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AC26913-BF31-4DFA-A5BB-5167289FC2AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CE2E7268-263B-4DB2-B3A9-334FCEC26D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE2E7268-263B-4DB2-B3A9-334FCEC26D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE2E7268-263B-4DB2-B3A9-334FCEC26D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE2E7268-263B-4DB2-B3A9-334FCEC26D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F181F6E-9C11-4142-8A21-2FBF2DF53464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F181F6E-9C11-4142-8A21-2FBF2DF53464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F181F6E-9C11-4142-8A21-2FBF2DF53464}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4F181F6E-9C11-4142-8A21-2FBF2DF53464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F181F6E-9C11-4142-8A21-2FBF2DF53464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F181F6E-9C11-4142-8A21-2FBF2DF53464}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

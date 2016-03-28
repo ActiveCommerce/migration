@@ -52,7 +52,8 @@ namespace ActiveCommerce.Migration.Orders
                 var order = ConvertOrder(legacyOrder);
                 if (!_testOnly)
                 {
-                    _orderRepository.Save(order);
+                    _orderRepository.Add(order);
+                    _orderRepository.Flush();
                 }
                 processed++;
             }
