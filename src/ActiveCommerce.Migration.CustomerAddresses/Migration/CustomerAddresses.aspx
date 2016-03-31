@@ -34,12 +34,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="field">
-            <asp:Label runat="server" AssociatedControlID="ddlSites">Select the Active Commerce site:
-            <small>Orders will be migrated for this Active Commerce website.</small>
-            </asp:Label>
-            <asp:DropDownList runat="server" ID="ddlSites" />
-        </div>
         <div class="actions">
             <asp:Button runat="server" ID="btnTest" Text="Test Migration" OnClick="btnTest_Click" />
             (Customer addresses won't be created)

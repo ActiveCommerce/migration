@@ -16,11 +16,6 @@ namespace ActiveCommerce.Migration.CustomerAddresses.Migration
             {
                 return;
             }
-            var sites = Sitecore.Sites.SiteManager.GetSites().EcommerceOnly();
-            ddlSites.DataSource = sites;
-            ddlSites.DataTextField = "Name";
-            ddlSites.DataValueField = "Name";
-            ddlSites.DataBind();
         }
 
         protected void btnMigrate_Click(object sender, EventArgs e)
