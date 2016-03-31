@@ -20,10 +20,12 @@ namespace ActiveCommerce.Migration.CustomerAddresses
     public class MigrationAssistant
     {
         private IEntityProvider<Sitecore.Ecommerce.DomainModel.Addresses.Country> countryProvider;
+        private IAddressRepository<AddressInfo> AddressRepository;
 
         public MigrationAssistant()
         {
             this.countryProvider = Sitecore.Ecommerce.Context.Entity.Resolve<IEntityProvider<Sitecore.Ecommerce.DomainModel.Addresses.Country>>();
+            this.AddressRepository = Context.Entity.Resolve<IAddressRepository<AddressInfo>>();
         }
 
         public MigrationCounts Process(bool test)
@@ -35,8 +37,6 @@ namespace ActiveCommerce.Migration.CustomerAddresses
             var extranetUsers = UserManager.GetUsers()
                 .Where(u => u.Domain.Name == "extranet");
 
-            var addressRepository = Context.Entity.Resolve<IAddressRepository<AddressInfo>>();
-
             extranetUsers.ToList()
                 .ForEach(u =>
                 {
@@ -44,7 +44,7 @@ namespace ActiveCommerce.Migration.CustomerAddresses
 
                     if (!string.IsNullOrWhiteSpace(customerId))
                     {
-                        var userAddresses = addressRepository.GetForCustomer(customerId);
+                        var userAddresses = this.AddressRepository.GetForCustomer(customerId);
 
                         if(!userAddresses.Any())
                         {
@@ -58,27 +58,46 @@ namespace ActiveCommerce.Migration.CustomerAddresses
 
                             if(shippingAddress.IsSameAsOtherAddress(billingAddress))
                             {
-                                shippingAddress.IsBillingDefault = true;
-                                addressRepository.Add(shippingAddress);
-
-                                counts.AddressesUpdated++;
+                                if(this.SaveAddress(shippingAddress, true, true))
+                                {
+                                    counts.AddressesUpdated += 2;
+                                }
                             }
                             else
                             {
-                                addressRepository.Add(shippingAddress);
-                                addressRepository.Add(billingAddress);
-                                counts.AddressesUpdated += 2;
+                                if(this.SaveAddress(shippingAddress, false, true))
+                                {
+                                    counts.AddressesUpdated++;
+                                }
+                                if (this.SaveAddress(billingAddress, true, false))
+                                {
+                                    counts.AddressesUpdated++;
+                                }
                             }
 
                             if (!test)
                             {
-                                addressRepository.Flush();
+                                this.AddressRepository.Flush();
                             }
                         }
                     }
                 });
 
             return counts;
+        }
+
+        private bool SaveAddress(AddressInfo address, bool defaultBilling, bool defaultShipping)
+        {
+            address.IsBillingDefault = defaultBilling;
+            address.IsShippingDefault = defaultShipping;
+
+            if(!string.IsNullOrWhiteSpace(address.Address))
+            {
+                this.AddressRepository.Add(address);
+                return true;
+            }
+
+            return false;
         }
 
         private AddressInfo GetShippingInfo(Sitecore.Security.UserProfile profile)
