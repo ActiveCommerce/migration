@@ -102,6 +102,7 @@ namespace ActiveCommerce.Migration.CustomerAddresses
 
         private AddressInfo GetShippingInfo(Sitecore.Security.UserProfile profile)
         {
+            /* TODO: Change to your extended address type if you have extended the address domain model. */
             AddressInfo shippingInfo = new AddressInfo();
 
             shippingInfo.Address = profile.GetCustomProperty("Shipping Address");
@@ -123,6 +124,7 @@ namespace ActiveCommerce.Migration.CustomerAddresses
             shippingInfo.Phone = profile.GetCustomProperty("Shipping Address Phone");
             shippingInfo.State = profile.GetCustomProperty("Shipping Address State");
             shippingInfo.Zip = profile.GetCustomProperty("Shipping Address Zip");
+            /* TODO: Populate any additional fields you have added to the address domain model. */
 
             shippingInfo.IsShippingDefault = true;
 
@@ -131,6 +133,7 @@ namespace ActiveCommerce.Migration.CustomerAddresses
 
         private AddressInfo GetBillingInfo(Sitecore.Security.UserProfile profile)
         {
+            /* TODO: Change to your extended address type if you have extended the address domain model. */
             AddressInfo billingInfo = new AddressInfo();
 
             billingInfo.Address = profile.GetCustomProperty("Billing Address");
@@ -152,6 +155,7 @@ namespace ActiveCommerce.Migration.CustomerAddresses
             billingInfo.Phone = profile.GetCustomProperty("Billing Address Phone");
             billingInfo.State = profile.GetCustomProperty("Billing Address State");
             billingInfo.Zip = profile.GetCustomProperty("Billing Address Zip");
+            /* TODO: Populate any additional fields you have added to the address domain model. */
 
             billingInfo.IsBillingDefault = true;
 

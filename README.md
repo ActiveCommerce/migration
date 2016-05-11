@@ -12,7 +12,7 @@ Building
   * The path in the *deploy.targets* file is used for assembly references in the projects. Alternatively you could update the references to a different source of assembly DLLs for Active Commerce, SES, Sitecore, etc. 
 * Open the solution in Visual Studio, customize to your needs, build, and test.
 
-Wish List Data
+Wish List Data (AC 3.1 or earlier to AC 3.2+)
 ----
 Wish List data conversion reads wish lists from the Sitecore content tree by searching for them in the *sitecore_master_index* at a specified location (i.e. the wish lists root in the content tree). To test wish list conversion:
 * Build the *ActiveCommerce.Migration.WishLists* project
@@ -20,7 +20,7 @@ Wish List data conversion reads wish lists from the Sitecore content tree by sea
 * Enter the Wish List Folder ID (the root folder of Wish List items for your site) and select a destination Active Commerce site
 * Click *Migrate*
 
-Order Data
+Order Data (AC 3.1 or earlier to AC 3.2+)
 ----
 Order data conversion reads orders from the Sitecore content tree using the legacy orders API, maps data appropriately to the new
 Order domain model, and saves the historical order to the database utilizing the new order repository API. To test order data conversion:
@@ -35,3 +35,15 @@ Order domain model, and saves the historical order to the database utilizing the
 * Use the *Test Migration* button to test the data conversion
   * This will allow you to confirm the number of orders that will be migrated, and that no errors occur during the data mapping process
 * Use *Migrate* to perform the data conversion and save the historical orders to the orders database
+
+Customer Addresses (AC 3.2 or earlier to AC 3.3)
+----
+Customer address conversion reads the saved shipping/billing addresses from the customer's ASP.NET Membership Profile, maps data into
+the Address domain model, and saves the addresses to the customer's address book in the Active Commerce database. To test order data conversion:
+* Review the TODO items in the *MigrationAssistant* class of the *ActiveCommerce.Migration.CustomerAddresses* project.
+  * Add logic to instantiate your extended address type, if applicable, and map/populate any additional fields you've added to it.
+* Build the *ActiveCommerce.Migration.CustomerAddresses* project
+* Open */Migration/CustomerAddresses.aspx* in your browser
+* Use the *Test Migration* button to test the data conversion
+  * This will allow you to confirm the number of addresses that will be migrated, and that no errors occur during the data mapping process
+* Use *Migrate* to perform the data conversion and save the customer addresses to the Active Commerce database
